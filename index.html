@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Des/Encriptador |Max Retana|</title>
+  </head>
+  <body>
+
+    <textarea id="texto" rows="10" cols="50"></textarea><br>
+    <button onclick="encriptar()">Encriptar</button>
+    <textarea id="resultado" rows="10" cols="50"></textarea>
+
+  </body>
+
+  <script>
+
+		function encriptar() {
+			var texto = document.getElementById("texto").value;
+			var resultado = "";
+			resultado = encriptarTexto(texto);
+			document.getElementById("resultado").value = resultado;
+		}
+
+		function encriptarTexto(texto) {
+			texto = texto.toLowerCase();
+			texto = texto.replace(/e/g, "enter");
+			texto = texto.replace(/i/g, "imes");
+			texto = texto.replace(/a/g, "ai");
+			texto = texto.replace(/o/g, "ober");
+			texto = texto.replace(/u/g, "ufat");
+			return texto;
+		}
+    
+	</script>
+
+</html>
