@@ -2,51 +2,44 @@
 <html>
   <head>
     <title>Des/Encriptador |Max Retana|</title>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
+    <header>
+      <img class="logo" src="/img/LogoMaxRetananbg.png" alt="Logo">
+    </header>
+    <main>
+      <div class="left-column">
+        <textarea class="text-area" id="texto" rows="30" cols="10" placeholder="Solo letras minusculas y sin acentos" oninput="checkInput()"></textarea>
+        <div class="botones">
+          <button class="btn-encriptar" onclick="encriptar()" disabled>Encriptar</button>
+          <button class="btn-desencriptar" onclick="desencriptar()" disabled>Desencriptar</button>
+        </div>
+      </div>
+      <div class="right-column">
+        <textarea class="mensaje" id="resultado" rows="30" cols="10"></textarea>
+        <div class="copiar-container">
+          <button class="copiar" onclick="copiar()">Copiar resultado</button>
+        </div>
+      </div>
+    </main>
 
-    <textarea id="texto" rows="10" cols="50"></textarea><br>
-    <button onclick="encriptar()">Encriptar</button>
-    <button onclick="desencriptar()">Desencriptar</button>
-    <textarea id="resultado" rows="10" cols="50"></textarea>
-
-  </body>
-
-  <script>
-
-		function encriptar() {
-			var texto = document.getElementById("texto").value;
-			var resultado = "";
-			resultado = encriptarTexto(texto);
-			document.getElementById("resultado").value = resultado;
-		}
-
-    function desencriptar(){
-      var texto = document.getElementById("texto").value;
-      var resultado = "";
-      resultado = desencriptarTexto(texto);
-      document.getElementById("resultado").value = resultado;
-    }
-
-		function encriptarTexto(texto) {
-			texto = texto.toLowerCase();
-			texto = texto.replace(/e/g, "enter");
-			texto = texto.replace(/i/g, "imes");
-			texto = texto.replace(/a/g, "ai");
-			texto = texto.replace(/o/g, "ober");
-			texto = texto.replace(/u/g, "ufat");
-			return texto;
-		}
-
-    function desencriptarTexto(texto) {
-			texto = texto.replace(/ufat/g, "u");
-			texto = texto.replace(/ober/g, "o");
-			texto = texto.replace(/ai/g, "a");
-			texto = texto.replace(/imes/g, "i");
-			texto = texto.replace(/enter/g, "e");
-			return texto;
-		}
+    <footer>
+      <p>Creado por Max Retana</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/maxretana/" target="_blank">
+          <img src="/img/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="mailto:maxretana981@gmail.com" target="_blank">
+          <img src="/img/email.png" alt="Gmail">
+        </a>
+        <a href="https://github.com/MaxRetana" target="_blank">
+          <img src="/img/github.png" alt="GitHub">
+        </a>
+      </div>
+    </footer>
     
-	</script>
 
+    <script src="index.js"></script>
+  </body>
 </html>
